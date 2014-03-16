@@ -1,0 +1,15 @@
+{
+	"name": "matthewspencer/kirby-twig-plugin",
+	"description": "Use Twig for Kirby templates",
+	"homepage": "https://github.com/matthewspencer/kirby-twig-plugin",
+	"license": "MIT",
+	"type": "library",
+
+	"autoload": {
+		"psr-4": {"Kirby\\Plugin\\": ""}
+	},
+	
+	"require" : {
+		"twig/twig": "1.15.*@dev"
+	}
+}
