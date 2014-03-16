@@ -2,6 +2,8 @@
 
 A simple plugin to use the [Twig](http://twig.sensiolabs.org/) template engine with [Kirby](http://getkirby.com/).
 
+This plugin is in beta.
+
 ## Installation
 
 Use [Composer](https://getcomposer.org/) to install this plugin into the site plugins directory. 
