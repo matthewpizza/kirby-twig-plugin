@@ -3,7 +3,7 @@
 	"description": "Use Twig for Kirby templates",
 	"homepage": "https://github.com/matthewspencer/kirby-twig-plugin",
 	"license": "MIT",
-	"type": "library",
+	"type": "kirby-plugin",
 
 	"autoload": {
 		"psr-4": {"Kirby\\Plugin\\": ""}
