@@ -8,8 +8,8 @@
 	"autoload": {
 		"psr-4": {"Kirby\\Plugin\\": ""}
 	},
-	
+
 	"require" : {
-		"twig/twig": "1.15.*@dev"
+		"twig/twig": "1.*"
 	}
 }
