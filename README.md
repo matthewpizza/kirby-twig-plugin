@@ -2,7 +2,7 @@
 
 A simple plugin to use the [Twig](http://twig.sensiolabs.org/) template engine with [Kirby](http://getkirby.com/).
 
-This plugin is in beta.
+:warning: This plugin is in beta and currently only works with Kirby 1.
 
 ## Installation
 
