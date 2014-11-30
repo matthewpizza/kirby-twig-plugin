@@ -53,4 +53,3 @@ class Twig {
 	}
 
 }
-return new Twig();
