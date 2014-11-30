@@ -17,7 +17,7 @@ class Twig {
 
 	var $kirby;
 
-	public function __construct($params=array()) {
+	public function __construct() {
 		$this->kirby = kirby();
 
 		$this->autoloader();
@@ -28,26 +28,26 @@ class Twig {
 	 * Require the autoloader
 	 */
 	private function autoloader() {
-		if ( ! file_exists($this->kirby->roots()->vendor() . '/autoload.php') ) {
-			die('Composer autoload does not exist.');
+		if ( ! file_exists( $this->kirby->roots()->vendor() . '/autoload.php' ) ) {
+			die( 'Composer autoload does not exist.' );
 		}
-		require_once($this->kirby->roots()->vendor() . '/autoload.php');
+		require_once( $this->kirby->roots()->vendor() . '/autoload.php' );
 	}
 
 	/**
 	 * Load Twig
 	 */
 	private function twig() {
-		$loader = new Twig_Loader_Filesystem($this->kirby->roots()->twig());
-		$twig = new Twig_Environment($loader, array(
-			'debug' => c::get('debug'),
-		));
+		$loader = new Twig_Loader_Filesystem( $this->kirby->roots()->twig() );
+		$twig = new Twig_Environment( $loader, array(
+			'debug' => c::get( 'debug' ),
+		) );
 
-		if ( c::get('debug') ) {
-			$twig->addExtension(new Twig_Extension_Debug());
+		if ( c::get( 'debug' ) ) {
+			$twig->addExtension( new Twig_Extension_Debug() );
 		}
 
-		tpl::set('twig', $twig);
+		tpl::set( 'twig', $twig );
 	}
 
 }
