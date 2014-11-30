@@ -36,9 +36,8 @@ To use this plugin in a project, define the repository and require it.
 Set roots for vendor and twig, and the file extension for twig views in config.php.
 
 ```php
-$kirby = kirby();
-$kirby->roots->vendor = dirname( $kirby->roots()->site() ) . '/vendor';
-$kirby->roots->twig = $kirby->roots()->site() . '/twig';
+kirby()->roots->vendor = dirname( kirby()->roots()->site() ) . '/vendor';
+kirby()->roots->twig = kirby()->roots()->site() . '/twig';
 c::set( 'twig.file.extension', 'twig' );
 ```
 
