@@ -15,11 +15,7 @@ use Twig_Extension_Debug;
  */
 class Twig {
 
-	var $kirby;
-
 	public function __construct() {
-		$this->kirby = kirby();
-
 		$this->autoloader();
 		$this->twig();
 	}
@@ -28,17 +24,17 @@ class Twig {
 	 * Require the autoloader
 	 */
 	private function autoloader() {
-		if ( ! file_exists( $this->kirby->roots()->vendor() . '/autoload.php' ) ) {
+		if ( ! file_exists( kirby()->roots()->vendor() . '/autoload.php' ) ) {
 			die( 'Composer autoload does not exist.' );
 		}
-		require_once( $this->kirby->roots()->vendor() . '/autoload.php' );
+		require_once( kirby()->roots()->vendor() . '/autoload.php' );
 	}
 
 	/**
 	 * Load Twig
 	 */
 	private function twig() {
-		$loader = new Twig_Loader_Filesystem( $this->kirby->roots()->twig() );
+		$loader = new Twig_Loader_Filesystem( kirby()->roots()->twig() );
 		$twig = new Twig_Environment( $loader, array(
 			'debug' => c::get( 'debug' ),
 		) );
