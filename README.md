@@ -2,11 +2,11 @@
 
 A simple plugin to use the [Twig](http://twig.sensiolabs.org/) template engine with [Kirby](http://getkirby.com/).
 
-This plugin is in beta.
+:warning: This plugin does not currently work with Kirby 2.
 
 ## Installation
 
-Use [Composer](https://getcomposer.org/) to install this plugin into the site plugins directory. 
+Use [Composer](https://getcomposer.org/) to install this plugin into the site plugins directory.
 
 To use this plugin in a project, define the repository and require it.
 
@@ -31,14 +31,15 @@ To use this plugin in a project, define the repository and require it.
 }
 ```
 
-## Configuration 
+## Configuration
 
-Set `root.vendor`, `root.twig`, and `twig.file.extension` in config.php.
+Set roots for vendor and twig, and the file extension for twig views in config.php.
 
 ```php
-c::set('root.vendor', c::get('root') . '/vendor');
-c::set('root.twig', c::get('root.site') . '/twig');
-c::set('twig.file.extension', 'twig');
+$kirby = kirby();
+$kirby->roots->vendor = dirname( $kirby->roots()->site() ) . '/vendor';
+$kirby->roots->twig = $kirby->roots()->site() . '/twig';
+c::set( 'twig.file.extension', 'twig' );
 ```
 
 ## Usage
@@ -51,7 +52,7 @@ $template = $page->template() . '.' . c::get('twig.file.extension');
 
 // pass an array of data to the twig template
 echo $twig->render(
-	$template, 
+	$template,
 	array(
 		'site' => $site,
 		'page' => array(

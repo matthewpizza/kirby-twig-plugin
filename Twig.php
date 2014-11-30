@@ -11,16 +11,14 @@ use Twig_Extension_Debug;
 /**
  * A Twig <http://twig.sensiolabs.org/> plugin for Kirby <http://getkirby.com/>
  * @author Matthew Spencer <http://matthewspencer.me/>
- * @version 0.1
+ * @version 0.2
  */
 class Twig {
 
-	var $rootVendor;
-	var $rootTwig;
+	var $kirby;
 
 	public function __construct($params=array()) {
-		$this->rootVendor = c::get('root.vendor');
-		$this->rootTwig = c::get('root.twig');
+		$this->kirby = kirby();
 
 		$this->autoloader();
 		$this->twig();
@@ -30,17 +28,17 @@ class Twig {
 	 * Require the autoloader
 	 */
 	private function autoloader() {
-		if ( ! file_exists($this->rootVendor . '/autoload.php') ) {
+		if ( ! file_exists($this->kirby->roots()->vendor() . '/autoload.php') ) {
 			die('Composer autoload does not exist.');
 		}
-		require_once($this->rootVendor . '/autoload.php');
+		require_once($this->kirby->roots()->vendor() . '/autoload.php');
 	}
 
 	/**
 	 * Load Twig
 	 */
 	private function twig() {
-		$loader = new Twig_Loader_Filesystem($this->rootTwig);
+		$loader = new Twig_Loader_Filesystem($this->kirby->roots()->twig());
 		$twig = new Twig_Environment($loader, array(
 			'debug' => c::get('debug'),
 		));
