@@ -2,7 +2,8 @@
 
 A simple plugin to use the [Twig](http://twig.sensiolabs.org/) template engine with [Kirby](http://getkirby.com/).
 
-:warning: This plugin does not currently work with Kirby 2.
+:warning: This plugin no longer supports Kirby 1. To use it, specify `1.1.2` as the version when requiring.
+:warning: This plugin requires at least Kirby 2.0.5.
 
 ## Installation
 
@@ -19,7 +20,7 @@ To use this plugin in a project, define the repository and require it.
 		}
 	],
 	"require": {
-		"matthewspencer/kirby-twig-plugin": "dev-master",
+		"matthewspencer/kirby-twig-plugin": "2.0.5",
 		"composer/installers": "~1.0"
 	},
 	"extra": {
