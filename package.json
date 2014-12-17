@@ -1,9 +1,0 @@
-{
-	"name": "twig",
-	"readable": "Twig",
-	"version": "0.1",
-	"stable": true,
-	"description": "Use Twig for Kirby templates",
-	"author": "Matthew Spencer",
-	"url": "http://matthewspencer.me"
-}
